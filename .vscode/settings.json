@@ -1,0 +1,36 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "css.validate": false,
+  "scss.validate": true,
+  "eslint.format.enable": true,
+  "stylelint.configFile": "stylelint.config.js",
+  "scss.suggestVariables": true,
+  "scss.completion.completePropertyWithSemicolon": true,
+
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true,
+
+  "files.exclude": {
+    "**/.turbo": true,
+    "**/.next": true
+  },
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/package-lock.json": true
+  }
+}

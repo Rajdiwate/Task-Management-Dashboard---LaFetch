@@ -1,0 +1,15 @@
+.ta-table {
+  background-color: var(--bg-primary);
+  box-shadow: functions.get-box-shadow(sm);
+  border-radius: functions.get-border-radius(3xl);
+
+  &__header {
+    border-bottom: functions.get-border(m, var(--border-light), solid);
+  }
+
+  &--no-background {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

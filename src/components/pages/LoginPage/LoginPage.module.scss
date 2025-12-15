@@ -1,0 +1,17 @@
+.login-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__stack {
+    @include mixins.padding(20);
+
+    min-width: 500px;
+    border-radius: functions.get-border-radius(xl);
+    border: functions.get-border(20);
+    background-color: var(--bg-secondary);
+  }
+}

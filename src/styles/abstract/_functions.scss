@@ -1,0 +1,73 @@
+@use 'sass:map';
+@use './variables';
+@use './color-variables';
+
+// function for ratings -->  usage => border: rating-color(4.6);
+@function rating-color($rating) {
+  @if $rating >= 4.5 {
+    @return map.get(variables.$ta-rating-colors, excellent);
+  } @else if $rating >= 3.9 {
+    @return map.get(variables.$ta-rating-colors, very-good);
+  } @else if $rating >= 3.3 {
+    @return map.get(variables.$ta-rating-colors, good);
+  } @else if $rating >= 2.8 {
+    @return map.get(variables.$ta-rating-colors, average);
+  } @else if $rating >= 2.4 {
+    @return map.get(variables.$ta-rating-colors, below-average);
+  } @else if $rating >= 1.9 {
+    @return map.get(variables.$ta-rating-colors, poor);
+  } @else if $rating >= 1.4 {
+    @return map.get(variables.$ta-rating-colors, very-poor);
+  } @else if $rating >= 0 {
+    @return map.get(variables.$ta-rating-colors, terrible);
+  } @else {
+    @return map.get(variables.$ta-rating-colors, default);
+  }
+}
+
+// Function to get box shadow values
+// Usage: box-shadow: get-box-shadow(drop);
+@function get-box-shadow($key) {
+  @return map.get(variables.$ta-box-shadow, $key);
+}
+
+// Function to get font size values
+// Usage: font-size: get-font-size(sm);
+@function get-font-size($key) {
+  @return map.get(variables.$ta-font-size, $key);
+}
+
+// Function to get font weight values
+// Usage: font-weight: get-font-weight(bold);
+@function get-font-weight($key) {
+  @return map.get(variables.$ta-font-weight, $key);
+}
+
+// Function to get font family values
+// Usage: font-family: get-font-family(main);
+@function get-font-family($key) {
+  @return map.get(variables.$ta-font-family, $key);
+}
+
+// Function to get color values (existing pattern extended)
+// Usage: color: get-color(primary, 300);
+@function get-color($color-name, $shade: base) {
+  @return map.get(color-variables.$ta-colors, $color-name, $shade);
+}
+
+// Function to get spacing values
+// Usage: padding: get-spacing(16);
+@function get-spacing($key) {
+  @return map.get(variables.$ta-spacing, $key);
+}
+
+// Function to get border radius values
+// Usage: border-radius: get-border-radius(m);
+@function get-border-radius($key) {
+  @return map.get(variables.$ta-border-radius, $key);
+}
+
+// Border function that returns border value
+@function get-border($width: m, $color: var(--border-light), $style: solid) {
+  @return map.get(variables.$ta-border-width, $width) $style $color;
+}

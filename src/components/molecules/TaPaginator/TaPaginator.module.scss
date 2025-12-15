@@ -1,0 +1,21 @@
+.ta-paginator {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__limit {
+    position: absolute;
+    left: 0;
+    min-width: 80px;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__info {
+    position: absolute;
+    right: 0;
+  }
+}

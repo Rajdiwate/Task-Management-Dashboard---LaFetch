@@ -1,0 +1,11 @@
+.manage-task-form {
+  @include mixins.padding(20);
+
+  border-radius: functions.get-border-radius(xl);
+  min-width: 600px;
+  background-color: var(--bg-primary);
+
+  @include mixins.respond-until(sm){
+    min-width: 300px;
+  }
+}

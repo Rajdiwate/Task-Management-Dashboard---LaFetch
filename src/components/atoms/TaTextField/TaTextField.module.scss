@@ -1,0 +1,9 @@
+.ta-text-field {
+  &--no-border {
+    :global(.MuiOutlinedInput-root) {
+      fieldset {
+        border: none;
+      }
+    }
+  }
+}

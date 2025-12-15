@@ -1,0 +1,19 @@
+.ta-icon-button {
+  &--hover-active:hover {
+    color: var(--text-active);
+  }
+
+  &--mode-contrast {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    &:hover {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+  }
+
+  &--mode-active {
+    color: var(--text-active);
+  }
+}

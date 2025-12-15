@@ -1,0 +1,23 @@
+rest-client
+
+# Build output
+dist/
+build/
+android
+
+# Node modules
+node_modules/
+
+
+# Environment files
+.env
+.env.*
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore specific config files
+.eslintrc.json
+.prettierignore

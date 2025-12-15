@@ -1,0 +1,34 @@
+// Reset and base styles
+@use '../abstract/theme';
+@import 'https://fonts.googleapis.com/css2?family=Outfit&display=swap';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* thin track + custom thumb color */
+  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-color: var(--text-primary) transparent; /* thumb | track */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- WebKit/Blink (Chrome/Edge/Safari) ---------- */
+*::-webkit-scrollbar {
+  width: 8px; /* vertical */
+  height: 8px; /* horizontal */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--text-primary);
+  border-radius: 999px;
+  border: 2px solid transparent; /* creates visual padding */
+  background-clip: padding-box;
+}

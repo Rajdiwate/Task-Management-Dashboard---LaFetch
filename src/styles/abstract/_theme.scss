@@ -1,0 +1,87 @@
+@use './functions';
+
+:root {
+  // Light Theme (default)
+  // Background colors
+  --bg-primary: #{functions.get-color(neutral-white, base)};
+  --bg-secondary: #{functions.get-color(neutral-black, 100)};
+  --bg-secondary-bright: #{functions.get-color(secondary, base)};
+  --bg-light: #{functions.get-color(neutral-white, 100)};
+  --bg-dark: #{functions.get-color(neutral-black, base)};
+  --bg-accent-light: #{functions.get-color(accent-purple, 300)};
+  --bg-accent: #{functions.get-color(accent-purple, 600)};
+  --bg-interactive-subtle: #{functions.get-color(primary, 100)};
+  --bg-interactive-medium: #{functions.get-color(primary, 200)};
+  --bg-interactive-strong: #{functions.get-color(primary, 300)};
+  --bg-interactive-very-strong: #{functions.get-color(primary, 400)};
+  --bg-dark-primary: #{functions.get-color(secondary, base)};
+  --bg-active-base: #{functions.get-color(primary, base)};
+  --bg-disable: #{functions.get-color(neutral-black, 200)};
+  --bg-purple-medium: #{functions.get-color(accent-purple, 600)};
+  --bg-purple-strong: #{functions.get-color(accent-purple, 900)};
+
+  // Text colors
+  --text-primary: #{functions.get-color(neutral-black, base)};
+  --text-muted: #{functions.get-color(neutral-white, 500)};
+  --text-light: #{functions.get-color(neutral-white, base)};
+  --text-hover: #{functions.get-color(primary, 400)};
+  --text-link: #{functions.get-color(primary, 400)};
+  --text-active: #{functions.get-color(primary, 400)};
+  --text-active-base: #{functions.get-color(primary, base)};
+  --text-error: #{functions.get-color(error, base)};
+  --text-accent: #{functions.get-color(accent-purple, base)};
+  --text-light-base: #{functions.get-color(neutral-white, base)};
+  --text-warning: #{functions.get-color(warning, 600)};
+
+  // Border colors
+  --border-light: #{functions.get-color(neutral-white, 100)};
+  --border-medium: #{functions.get-color(neutral-white, 300)};
+  --border-active: #{functions.get-color(primary, 400)};
+  --border-active-base: #{functions.get-color(primary, base)};
+  --border-error: #{functions.get-color(error, 400)};
+  --border-dark: #{functions.get-color(neutral-black, base)};
+  --border-purple-light: #{functions.get-color(accent-purple, 300)};
+}
+
+[data-theme='dark'] {
+  // Dark Theme
+  // Background colors
+  --bg-primary: #{functions.get-color(neutral-black, base)};
+  --bg-secondary: #{functions.get-color(neutral-black, 950)};
+  --bg-secondary-bright: #{functions.get-color(secondary, base)};
+  --bg-light: #{functions.get-color(neutral-black, base)};
+  --bg-dark: #{functions.get-color(neutral-white, 200)};
+  --bg-accent-light: #{functions.get-color(accent-purple, 300)};
+  --bg-accent: #{functions.get-color(accent-purple, 600)};
+  --bg-interactive-subtle: #{functions.get-color(primary, 600)};
+  --bg-interactive-medium: #{functions.get-color(primary, 400)};
+  --bg-interactive-strong: #{functions.get-color(primary, 300)};
+  --bg-interactive-very-strong: #{functions.get-color(primary, 400)};
+  --bg-dark-primary: #{functions.get-color(secondary, base)};
+  --bg-active-base: #{functions.get-color(primary, base)};
+  --bg-disable: #{functions.get-color(neutral-black, 800)};
+  --bg-purple-medium: #{functions.get-color(accent-purple, 600)};
+  --bg-purple-strong: #{functions.get-color(accent-purple, base)};
+
+  // Text colors
+  --text-primary: #{functions.get-color(neutral-white, base)};
+  --text-muted: #{functions.get-color(neutral-white, 400)};
+  --text-light: #{functions.get-color(neutral-black, base)};
+  --text-hover: #{functions.get-color(primary, 400)};
+  --text-link: #{functions.get-color(primary, 400)};
+  --text-active: #{functions.get-color(primary, 400)};
+  --text-active-base: #{functions.get-color(primary, base)};
+  --text-error: #{functions.get-color(error, base)};
+  --text-accent: #{functions.get-color(accent-purple, base)};
+  --text-light-base: #{functions.get-color(neutral-white, base)};
+  --text-warning: #{functions.get-color(warning, 600)};
+
+  // Border colors
+  --border-light: #{functions.get-color(neutral-black, 950)};
+  --border-medium: #{functions.get-color(neutral-black, 800)};
+  --border-active: #{functions.get-color(primary, 400)};
+  --border-active-base: #{functions.get-color(primary, base)};
+  --border-error: #{functions.get-color(error, 800)};
+  --border-dark: #{functions.get-color(neutral-white, base)};
+  --border-purple-light: #{functions.get-color(accent-purple, 300)};
+}

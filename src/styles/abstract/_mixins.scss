@@ -1,0 +1,145 @@
+@use 'sass:map';
+@use 'sass:math';
+@use './variables';
+
+// Space
+@function get-space($key) {
+  $abs-key: math.abs($key);
+  $value: map.get(variables.$ta-spacing, $abs-key);
+
+  @if not $value {
+    @warn "get-space: `#{$key}` not found in $ta-space.";
+    @return null;
+  }
+
+  @if $key < 0 {
+    @return -1 * $value;
+  }
+
+  @return $value;
+}
+
+// @include margin(4);                // Apply margin 4 on all sides
+// @include margin(4, 6);             // Apply margin 4 to top & bottom, 6 to right & left
+// @include margin(4, 6, 10);         // Apply margin 4 (top), 6 (right & left), 10 (bottom)
+// @include margin(4, 6, 10, 2);      // Apply margin 4 (top), 6 (right), 10 (bottom), 2 (left)
+// @include margin($top: 4);          // Apply margin 4 only to top
+// @include margin($bottom: 6);       // Apply margin 6 only to bottom
+// @include margin($top: 4, $left: 2); // Apply margin 4 to top and 2 to left
+@mixin margin($all: null, $right: null, $bottom: null, $left: null, $top: null) {
+  @if $all and not $right and not $bottom and not $left {
+    margin: get-space($all);
+  } @else if $all and $right and not $bottom and not $left {
+    margin: get-space($all) get-space($right);
+  } @else if $all and $right and $bottom and not $left {
+    margin: get-space($all) get-space($right) get-space($bottom);
+  } @else if $all and $right and $bottom and $left {
+    margin: get-space($all) get-space($right) get-space($bottom) get-space($left);
+  } @else {
+    @if $top {
+      margin-top: get-space($top);
+    }
+
+    @if $right {
+      margin-right: get-space($right);
+    }
+
+    @if $bottom {
+      margin-bottom: get-space($bottom);
+    }
+
+    @if $left {
+      margin-left: get-space($left);
+    }
+  }
+}
+
+// @include padding(4);                 // Apply padding 4 on all sides
+// @include padding(4, 6);              // Apply padding 4 to top & bottom, 6 to right & left
+// @include padding(4, 6, 10);          // Apply padding 4 (top), 6 (right & left), 10 (bottom)
+// @include padding(4, 6, 10, 2);       // Apply padding 4 (top), 6 (right), 10 (bottom), 2 (left)
+// @include padding($top: 4);           // Apply padding 4 only to top
+// @include padding($bottom: 6);        // Apply padding 6 only to bottom
+// @include padding($top: 4, $left: 2); // Apply padding 4 to top and 2 to left
+@mixin padding($all: null, $right: null, $bottom: null, $left: null, $top: null) {
+  @if $all and not $right and not $bottom and not $left {
+    padding: get-space($all);
+  } @else if $all and $right and not $bottom and not $left {
+    padding: get-space($all) get-space($right);
+  } @else if $all and $right and $bottom and not $left {
+    padding: get-space($all) get-space($right) get-space($bottom);
+  } @else if $all and $right and $bottom and $left {
+    padding: get-space($all) get-space($right) get-space($bottom) get-space($left);
+  } @else {
+    @if $top {
+      padding-top: get-space($top);
+    }
+
+    @if $right {
+      padding-right: get-space($right);
+    }
+
+    @if $bottom {
+      padding-bottom: get-space($bottom);
+    }
+
+    @if $left {
+      padding-left: get-space($left);
+    }
+  }
+}
+
+// Usage:
+// @include respond-to('sm') {
+//   padding: 2rem;
+// }
+// Mixin for min-width (mobile-first)
+@mixin respond-to($breakpoint) {
+  @if map.has-key(variables.$ta-breakpoints, $breakpoint) {
+    @media (min-width: map.get(variables.$ta-breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`.";
+  }
+}
+
+// Usage:
+// @include respond-until('lg') {
+//   padding: 2rem;
+// }
+// Mixin for max-width (desktop-first)
+@mixin respond-until($breakpoint) {
+  @if map.has-key(variables.$ta-breakpoints, $breakpoint) {
+    @media (max-width: map.get(variables.$ta-breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`.";
+  }
+}
+
+// Ease-in transition mixin
+// usage => @include ease-in($property: all, $duration: 0.3s, $delay: 0s);
+// with no arguments => @include ease-in();
+@mixin ease-in($property: all, $duration: 0.3s, $delay: 0s) {
+  transition: $property $duration cubic-bezier(0.55, 0.085, 0.68, 0.53) $delay;
+}
+
+// with no arguments => @include ease-out();
+// Ease-out transition mixin
+@mixin ease-out($property: all, $duration: 0.3s, $delay: 0s) {
+  transition: $property $duration cubic-bezier(0.25, 0.46, 0.45, 0.94) $delay;
+}
+
+// with no arguments => @include ease-in-out();
+// Ease-in-out transition mixin
+@mixin ease-in-out($property: all, $duration: 0.3s, $delay: 0s) {
+  transition: $property $duration cubic-bezier(0.445, 0.05, 0.55, 0.95) $delay;
+}
+
+// with no arguments => @include linear();
+// Linear transition mixin
+@mixin linear($property: all, $duration: 0.3s, $delay: 0s) {
+  transition: $property $duration linear $delay;
+}

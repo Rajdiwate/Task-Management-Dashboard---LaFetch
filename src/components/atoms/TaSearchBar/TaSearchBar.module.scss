@@ -1,0 +1,12 @@
+// ta-search-bar styles
+.ta-search-bar {
+  outline: functions.get-border(m, var(--border-light), solid);
+  border-radius: functions.get-border-radius(sm);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
+  &__icon {
+    width: auto;
+    height: 24px;
+  }
+}

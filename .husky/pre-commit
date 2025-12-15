@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🐶 Husky is working!'
+echo "🔍 Running lint-staged to check code quality..."
+
+npx lint-staged # uncommit when prettier and eslint properly setup
+
+
+echo "✅ Pre-commit All checks passed! Ready to commit 🚀"

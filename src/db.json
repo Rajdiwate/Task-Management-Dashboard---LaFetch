@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Raj",
+      "email": "raj@test.com",
+      "roleName": "admin",
+      "token": "123456"
+    },
+    {
+      "id": "2",
+      "username": "User2",
+      "email": "user2@test.com",
+      "roleName": "user",
+      "token": "token2"
+    },
+    {
+      "id": "3",
+      "username": "User3",
+      "email": "user3@test.com",
+      "roleName": "user",
+      "token": "token3"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Learn json-server",
+      "description": "Understand how to set up and use json-server for mocking APIs",
+      "status": "in-progress",
+      "user": {
+        "id": "1",
+        "username": "Raj",
+        "email": "raj@test.com",
+        "roleName": "admin",
+        "token": "123456"
+      },
+      "date": "2025-12-15"
+    },
+    {
+      "id": "2",
+      "title": "Implement Login",
+      "description": "Create login page and integrate with mock backend",
+      "status": "done",
+      "user": {
+        "id": "3",
+        "username": "User3",
+        "email": "user3@test.com",
+        "roleName": "user",
+        "token": "token3"
+      },
+      "date": "2025-12-14"
+    },
+    {
+      "id": "3",
+      "title": "Design Sidebar",
+      "description": "Create a responsive sidebar with navigation items",
+      "status": "todo",
+      "user": {
+        "id": "1",
+        "username": "Raj",
+        "email": "raj@test.com",
+        "roleName": "admin"
+      },
+      "date": "2025-12-16"
+    },
+    {
+      "id": "4",
+      "title": "Create Dashboard",
+      "description": "Dashboard overview page with charts",
+      "status": "todo",
+      "user": {
+        "id": "2",
+        "username": "User2",
+        "email": "user2@test.com",
+        "roleName": "user"
+      },
+      "date": "2025-12-17"
+    },
+    {
+      "id": "5",
+      "title": "Profile Page",
+      "description": "User profile management",
+      "status": "in-progress",
+      "user": {
+        "id": "3",
+        "username": "User3",
+        "email": "user3@test.com",
+        "roleName": "user"
+      },
+      "date": "2025-12-18"
+    },
+    {
+      "id": "aa53",
+      "title": "some title",
+      "description": "desc",
+      "status": "done",
+      "user": {
+        "id": "1",
+        "username": "Raj",
+        "email": "raj@test.com",
+        "roleName": "admin",
+        "token": "123456"
+      },
+      "date": "2025-12-15"
+    }
+  ]
+}

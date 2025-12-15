@@ -1,0 +1,11 @@
+.ta-typography {
+  &--muted {
+    color: var(--text-muted);
+  }
+
+  &--large {
+    @at-root h1#{&} {
+      font-size: 3rem;
+    }
+  }
+}
