@@ -70,3 +70,12 @@ _The application will optionally open in your browser, typically at `http://loca
 - **`npm run lint`**: Lints the codebase using ESLint.
 - **`npm run format`**: Formats code using Prettier.
 - **`npm run test`**: Runs unit tests using Vitest.
+
+## Screenshots
+
+![Screenshot 1](public/Screenshot%202025-12-15%20103229.png)
+![Screenshot 2](public/Screenshot%202025-12-15%20103238.png)
+![Screenshot 3](public/Screenshot%202025-12-15%20103257.png)
+![Screenshot 4](public/Screenshot%202025-12-15%20103312.png)
+![Screenshot 5](public/Screenshot%202025-12-15%20103331.png)
+![Screenshot 6](public/Screenshot%202025-12-15%20103349.png)
